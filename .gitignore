@@ -1,2 +1,5 @@
 debug/
 target/
+.bsp/
+.idea/
+cs
