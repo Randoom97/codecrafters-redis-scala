@@ -44,7 +44,8 @@ object ServerHandler {
 
   private def handleCommand(arguments: Array[String]): RedisType = {
     arguments.head.toLowerCase match {
-      case "ping" => RedisType.SimpleString("PONG")
+      case "ping" => Commands.ping()
+      case "echo" => Commands.echo(arguments.drop(1))
       case command => RedisType.SimpleError(s"Error, unsupported command: $command")
     }
   }
